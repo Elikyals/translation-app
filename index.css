@@ -1,0 +1,107 @@
+body {
+    margin: 0 auto;
+    width: 430px;
+    font-family: "Poppins", sans-serif;
+    box-shadow: 1px 1px 5px gray;
+}
+/* header */
+header > .container {
+    background-image: url('assets/worldmap.png');
+    height: 200px;
+    background-size: cover;
+    background-position: -110px center;
+}
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+.hero > img {
+    width: 100px;
+    height: fit-content;
+}
+.hero-text > h1 {
+    font-family: "Big Shoulders", sans-serif;
+    color: #32CD32;
+    margin: 0;
+    font-size: 2.75rem;
+}
+.hero-text > p {
+    color: white;
+    margin: 0;
+    font-size: 0.75rem;
+}
+
+/* main */
+main {
+    padding-bottom: 1.5em;
+}
+.translation-section {
+    border: 4px solid #252F42;
+    border-radius: 15px;
+    margin: 1.5em 1em;
+    padding: 1em;
+}
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form > label, legend {
+    color: #035A9D;
+    text-align: center;
+    padding-bottom: 1em;
+}
+
+fieldset > div > label,
+form > label,
+legend {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+form > textarea {
+    border-radius: 8px;
+    background-color: #EFF0F4;
+    border: none;
+    height: 120px;
+    resize: none;
+    padding: 1em 0 0 0.5em;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+fieldset {
+    border-style: none;
+}
+legend {
+    padding-top: 1em;
+}
+
+fieldset > div {
+    display: flex;
+    align-items: center;
+    padding-left: 2em;
+    padding-bottom: 0.5em;
+}
+fieldset > div > label {
+    padding: 0 0.5em 0 0.5em;
+}
+fieldset > div > img {
+    border: 1px solid #999999;
+}
+
+div > input[type="radio"] {
+    width: 18px;
+    height: 18px;
+}
+
+input[type="submit"] {
+    background-color: #035A9D;
+    border: none;
+    color: white;
+    padding: 0.5em 0;
+    border-radius: 6px;
+    margin-bottom: 1.5em;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
