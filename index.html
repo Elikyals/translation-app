@@ -19,28 +19,30 @@
         </header>
         <main>
             <div class="translation-section">
-                <form>
-                    <label>Text to translate 👇</label>
-                    <textarea></textarea>
+                <form id="translation-form">
+                    <label id="translation-title">Text to translate 👇</label>
+                    <textarea id="input-txt"></textarea>
                     <fieldset>
-                        <legend>Select language 👇</legend>
-                        <div>
-                            <input type="radio" id="french" name="language" value="french" checked />
-                            <label for="french">French </label>
-                            <img src="assets\fr-flag.png" alt="Flag of France">
-                        </div>
-                        <div>
-                            <input type="radio" id="spanish" name="language" value="spanish"/>
-                            <label for="spanish">Spanish</label>
-                            <img src="assets\sp-flag.png" alt="Flag of spain">
-                        </div>
-                        <div>
-                            <input type="radio" id="japanese" name="language" value="japanese"/>
-                            <label for="japanese">Japanese</label>
-                            <img src="assets\jpn-flag.png" alt="Flag of Japan">
+                        <legend id="select-lang-title">Select language 👇</legend>
+                        <div id="inner-form">
+                            <div>
+                                <input type="radio" id="french" name="language" value="french" checked />
+                                <label for="french">French </label>
+                                <img src="assets\fr-flag.png" alt="Flag of France">
+                            </div>
+                            <div>
+                                <input type="radio" id="spanish" name="language" value="spanish"/>
+                                <label for="spanish">Spanish</label>
+                                <img src="assets\sp-flag.png" alt="Flag of spain">
+                            </div>
+                            <div>
+                                <input type="radio" id="japanese" name="language" value="japanese"/>
+                                <label for="japanese">Japanese</label>
+                                <img src="assets\jpn-flag.png" alt="Flag of Japan">
+                            </div>
                         </div>
                     </fieldset>
-                    <input type="submit" value="Translate">
+                    <input id="submit" type="submit" value="Translate">
                 </form>
             </div>
         </main>

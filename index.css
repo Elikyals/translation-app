@@ -54,13 +54,13 @@ form > label, legend {
     padding-bottom: 1em;
 }
 
-fieldset > div > label,
+fieldset > #inner-form > div > label,
 form > label,
 legend {
     font-size: 1.25rem;
     font-weight: bold;
 }
-form > textarea {
+form > textarea, .output-txt {
     border-radius: 8px;
     background-color: #EFF0F4;
     border: none;
@@ -77,16 +77,16 @@ legend {
     padding-top: 1em;
 }
 
-fieldset > div {
+#inner-form > div {
     display: flex;
     align-items: center;
     padding-left: 2em;
     padding-bottom: 0.5em;
 }
-fieldset > div > label {
+#inner-form > div > label {
     padding: 0 0.5em 0 0.5em;
 }
-fieldset > div > img {
+#inner-form > div > img {
     border: 1px solid #999999;
 }
 
@@ -104,4 +104,9 @@ input[type="submit"] {
     margin-bottom: 1.5em;
     font-size: 1.5rem;
     font-weight: bold;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #1d74b6;
 }
