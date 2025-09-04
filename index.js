@@ -4,14 +4,19 @@ const submitBtn = document.getElementById("submit")
 const innerFormSection = document.getElementById('inner-form')
 const selectLangTitle = document.getElementById('select-lang-title')
 
-async function sendMessage(userInput) {
+async function sendMessage(language, userInput) {
     try {
-        const response = await fetch('http://localhost:3000/api/chat', {
+        const response = await fetch('/api/chat', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ message: userInput})
+            body: JSON.stringify(
+                {
+                    language: language,
+                    sentence: userInput
+                }
+            )
         })
         const translatedText = await response.json()
         return translatedText
@@ -19,35 +24,35 @@ async function sendMessage(userInput) {
         return 'Error: Could not get response';
     }
 }
-form.addEventListener('submit', (e) => {
+
+form.addEventListener('submit', async (e) => {
     e.preventDefault()
-    const inputValue = inputTextField.value
-    if (submitBtn.value == "Translate"){
+    if (submitBtn.value == "Translate") {
+        const inputValue = inputTextField.value
+        const selectedLanguage = document.querySelector('input[name="language"]:checked').value
         if (inputValue) {
             // API functionality
-            try {
-                const response = await
-            }
-            renderNewPage()
+            const response = await sendMessage(selectedLanguage, inputValue)
+            renderNewPage(response.reply)
         }
-    } 
-    else if (submitBtn.value == "Start Over"){
+    }
+    else if (submitBtn.value == "Start Over") {
         renderPreviousPage()
     }
 
 })
 
-function renderNewPage(){
-    document.getElementById('translation-title').textContent = "Original text 👇" 
-    selectLangTitle.textContent = "Your translation 👇" 
+function renderNewPage(translation) {
+    document.getElementById('translation-title').textContent = "Original text 👇"
+    selectLangTitle.textContent = "Your translation 👇"
     selectLangTitle.style.paddingBottom = 0
-    innerFormSection.innerHTML = `<p id="output-txt" class="output-txt">Comment allez-vous?</p>`
-    submitBtn.value = "Start Over" 
+    innerFormSection.innerHTML = `<p id="output-txt" class="output-txt">${translation}</p>`
+    submitBtn.value = "Start Over"
 }
 
-function renderPreviousPage(){
-    document.getElementById('translation-title').textContent = "Text to translate 👇" 
-    selectLangTitle.textContent = "Select language 👇" 
+function renderPreviousPage() {
+    document.getElementById('translation-title').textContent = "Text to translate 👇"
+    selectLangTitle.textContent = "Select language 👇"
     inputTextField.value = ""
     innerFormSection.innerHTML = `
     <div>
@@ -66,5 +71,5 @@ function renderPreviousPage(){
         <img src="assets/jpn-flag.png" alt="Flag of Japan">
     </div>
     `
-    submitBtn.value = "Translate" 
+    submitBtn.value = "Translate"
 }
