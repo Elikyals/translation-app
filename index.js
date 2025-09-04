@@ -3,13 +3,31 @@ const inputTextField = document.getElementById('input-txt')
 const submitBtn = document.getElementById("submit")
 const innerFormSection = document.getElementById('inner-form')
 const selectLangTitle = document.getElementById('select-lang-title')
+
+async function sendMessage(userInput) {
+    try {
+        const response = await fetch('http://localhost:3000/api/chat', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ message: userInput})
+        })
+        const translatedText = await response.json()
+        return translatedText
+    } catch (error) {
+        return 'Error: Could not get response';
+    }
+}
 form.addEventListener('submit', (e) => {
     e.preventDefault()
     const inputValue = inputTextField.value
     if (submitBtn.value == "Translate"){
         if (inputValue) {
-            // API functionality goes here
-            console.log(inputValue)
+            // API functionality
+            try {
+                const response = await
+            }
             renderNewPage()
         }
     } 
