@@ -3,6 +3,7 @@ const inputTextField = document.getElementById('input-txt')
 const submitBtn = document.getElementById("submit")
 const innerFormSection = document.getElementById('inner-form')
 const selectLangTitle = document.getElementById('select-lang-title')
+const loadingIcon = document.getElementById('container-animated-loading-svg')
 
 async function sendMessage(language, userInput) {
     try {
@@ -31,9 +32,14 @@ form.addEventListener('submit', async (e) => {
         const inputValue = inputTextField.value
         const selectedLanguage = document.querySelector('input[name="language"]:checked').value
         if (inputValue) {
+            submitBtn.hidden = true
+            loadingIcon.hidden = false
             // API functionality
             const response = await sendMessage(selectedLanguage, inputValue)
             renderNewPage(response.reply)
+            submitBtn.hidden = false
+            loadingIcon.hidden = true
+            
         }
     }
     else if (submitBtn.value == "Start Over") {
