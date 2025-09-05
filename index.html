@@ -9,6 +9,8 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders:opsz@10..72&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+        <!-- Icons -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0&icon_names=send" />
     </head>
     <body>
         <header>
@@ -21,32 +23,38 @@
             </div>
         </header>
         <main>
-            <div class="translation-section">
-                <form id="translation-form">
-                    <label for="input-txt" id="translation-title">Text to translate 👇</label>
-                    <textarea id="input-txt"></textarea>
+            <div class="chat-section">
+                <div class="chat-container">
+                    <p class="system-text">Select the language you me to translate into, type your text and hit send!</p>
+                    <p class="user-text">How are you?</p>
+                    <p class="system-text">Comment allez-vous?</p>
+                </div>
+                <div class="user-input">
+                    <div class="chatbox">
+                        <textarea rows="1"></textarea>
+                        <span class="material-symbols-outlined send-btn">send</span>
+                    </div>
                     <fieldset>
-                        <legend id="select-lang-title">Select language 👇</legend>
-                        <div id="inner-form">
-                            <div>
-                                <input type="radio" id="french" name="language" value="french" checked />
-                                <label for="french">French </label>
-                                <img src="assets\fr-flag.png" alt="Flag of France">
-                            </div>
-                            <div>
-                                <input type="radio" id="spanish" name="language" value="spanish"/>
-                                <label for="spanish">Spanish</label>
-                                <img src="assets\sp-flag.png" alt="Flag of spain">
-                            </div>
-                            <div>
-                                <input type="radio" id="japanese" name="language" value="japanese"/>
-                                <label for="japanese">Japanese</label>
-                                <img src="assets\jpn-flag.png" alt="Flag of Japan">
-                            </div>
+                        <div>
+                            <input type="radio" id="french" name="language" value="french" checked />
+                            <label for="french">
+                                <img class="flag" src="assets\fr-flag.png" alt="Flag of France">
+                            </label>
+                        </div>
+                        <div>
+                            <input type="radio" id="spanish" name="language" value="spanish"/>
+                            <label for="spanish">
+                                <img class="flag" src="assets\sp-flag.png" alt="Flag of spain">
+                            </label>
+                        </div>
+                        <div>
+                            <input type="radio" id="japanese" name="language" value="japanese"/>
+                            <label for="japanese">
+                                <img class="flag" src="assets\jpn-flag.png" alt="Flag of Japan">
+                            </label>
                         </div>
                     </fieldset>
-                    <input id="submit" type="submit" value="Translate">
-                </form>
+                </div>
             </div>
         </main>
         <script src="index.js" type="module"></script>
