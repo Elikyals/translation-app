@@ -1,10 +1,10 @@
 # PollyGlot Translation App (Core Requirements)
 
-This project is part of the Scrimba Full Stack Career Development Track. PollyGlot is a simple translation app built from scratch, following the [design spec](https://www.figma.com/design/5zQQiaSDdUu8AqVGlg9PZ3/OpenAi-API---PollyGlot?node-id=0-1&p=f).
+This project is part of the Scrimba Full Stack Career Development Track. PollyGlot is a simple translation app built from scratch, following the design spec provided by scrimba.
 
 ## Branches
 
-- **[main](https://github.com/Elikyals/translation-app/tree/main)** – Latest stable version (same as stretch-goal)
+- **[main](https://github.com/Elikyals/translation-app/tree/main)** – Latest stable version (same as core-req)
 - **[core-req](https://github.com/Elikyals/translation-app/tree/core-req)** – Core requirements only (this branch)
 - **[stretch-goal](https://github.com/Elikyals/translation-app/tree/stretch-goal)** – Includes stretch goals
 
