@@ -1,24 +1,59 @@
-# Goals
+# PollyGlot Translation App (Core Requirements)
 
-## Core Requrement
+This project is part of the Scrimba Full Stack Career Development Track. PollyGlot is a simple translation app built from scratch, following the [design spec](https://www.figma.com/design/5zQQiaSDdUu8AqVGlg9PZ3/OpenAi-API---PollyGlot?node-id=0-1&p=f).
 
-- Build it from scratch
-- Follow the design
-  - [Design Spec](https://www.figma.com/design/5zQQiaSDdUu8AqVGlg9PZ3/OpenAi-API---PollyGlot?node-id=0-1&p=f)
-- Make sure you:
-  - Setup the OpenAI API
-  - Select a model
-  - Engineer a prompt
-  - Use temperature
-  - Use max_tokens
-  - Render the completion
-- Use any framework or library
+## Branches
+
+- **[main](https://github.com/Elikyals/translation-app/tree/main)** – Latest stable version (same as stretch-goal)
+- **[core-req](https://github.com/Elikyals/translation-app/tree/core-req)** – Core requirements only (this branch)
+- **[stretch-goal](https://github.com/Elikyals/translation-app/tree/stretch-goal)** – Includes stretch goals
+
+## Features (Core Requirements)
+
+- Translate English text to French, Spanish, or Japanese
+- Uses DeepSeek API via OpenAI SDK
+- Clean, responsive UI
+- Loading indicator for API requests
+- Error handling for failed requests
+
+## Setup
+
+1. Clone the repo and switch to the `core-req` branch:
+
+    ```sh
+    git clone https://github.com/Elikyals/translation-app.git
+    cd translation-app
+    git checkout core-req
+    ```
+
+2. Install dependencies:
+
+    ```sh
+    npm install
+    ```
+
+3. Copy `.env.sample` to `.env` and add your DeepSeek API key:
+
+    ```sh
+    DEEP_SEEK_API_KEY=your_api_key_here
+    ```
+
+4. Start the server:
+
+    ```sh
+    npm start
+    ```
+
+5. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## Demo
+
+![App Demo]() #TODO: Gif goes here
 
 ## Stretch Goals
 
-- Turn into chat app
-- Add functionality:
-  - Ability to correct
-  - Add AI generated images
-- Handle errors
-- Deploy (with API key hidden)
+See the [`stretch-goal`](https://github.com/Elikyals/translation-app/tree/stretch-goal) branch for features like chat mode, correction, AI-generated images, and deployment instructions.
+
+---
+
+**Note:** This README is for the `core-req` branch. For stretch goals and the latest features, check the other branches linked above.
