@@ -24,33 +24,32 @@
         </header>
         <main>
             <div class="chat-section">
-                <div class="chat-container">
+                <div class="chat-container" id="chat-container">
                     <p class="system-text">Select the language you me to translate into, type your text and hit send!</p>
-                    <p class="user-text">How are you?</p>
-                    <p class="system-text">Comment allez-vous?</p>
                 </div>
                 <div class="user-input">
                     <div class="chatbox">
-                        <textarea rows="1"></textarea>
-                        <span class="material-symbols-outlined send-btn">send</span>
+                        <textarea id="input-field" rows="1"></textarea>
+                        <img class="send-btn" id="send-btn" src="assets\send_btn.svg" alt="send button"  title="Click to send. Double click for new chat.">
+                        <img id="loading-animation" class="loading-animation" src="assets\loading.svg" alt="loading animation" hidden> 
                     </div>
-                    <fieldset>
-                        <div>
+                    <fieldset id="flag-btn">
+                        <div class="flag-btn">
                             <input type="radio" id="french" name="language" value="french" checked />
                             <label for="french">
-                                <img class="flag" src="assets\fr-flag.png" alt="Flag of France">
+                                <img id="french-flag" class="flag clicked" src="assets\fr-flag.png" alt="Flag of France">
                             </label>
                         </div>
-                        <div>
+                        <div class="flag-btn">
                             <input type="radio" id="spanish" name="language" value="spanish"/>
                             <label for="spanish">
-                                <img class="flag" src="assets\sp-flag.png" alt="Flag of spain">
+                                <img id="spanish-flag" class="flag" src="assets\sp-flag.png" alt="Flag of spain">
                             </label>
                         </div>
-                        <div>
+                        <div class="flag-btn">
                             <input type="radio" id="japanese" name="language" value="japanese"/>
                             <label for="japanese">
-                                <img class="flag" src="assets\jpn-flag.png" alt="Flag of Japan">
+                                <img id="japanese-flag" class="flag" src="assets\jpn-flag.png" alt="Flag of Japan">
                             </label>
                         </div>
                     </fieldset>

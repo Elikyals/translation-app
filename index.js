@@ -1,8 +1,8 @@
-const form = document.getElementById("translation-form")
-const inputTextField = document.getElementById('input-txt')
-const submitBtn = document.getElementById("submit")
-const innerFormSection = document.getElementById('inner-form')
-const selectLangTitle = document.getElementById('select-lang-title')
+const sendBtn = document.getElementById("send-btn")
+const inputTextField = document.getElementById('input-field')
+const flagsBtn = document.getElementById('flag-btn')
+const chatContainer = document.getElementById('chat-container')
+const loadingEl = document.getElementById('loading-animation')
 
 async function sendMessage(language, userInput) {
     try {
@@ -24,52 +24,56 @@ async function sendMessage(language, userInput) {
         return 'Error: Could not get response';
     }
 }
+function toggleFlags(clickedOpt) {
+    const frenchFlagEl = document.getElementById('french-flag') 
+    const spanishFlagEl = document.getElementById('spanish-flag')
+    const japaneseFlagEl = document.getElementById('japanese-flag')
+    frenchFlagEl.classList.remove('clicked')
+    spanishFlagEl.classList.remove('clicked')
+    japaneseFlagEl.classList.remove('clicked')
+    clickedOpt.classList.add('clicked')
 
-form.addEventListener('submit', async (e) => {
-    e.preventDefault()
-    if (submitBtn.value == "Translate") {
-        const inputValue = inputTextField.value
-        const selectedLanguage = document.querySelector('input[name="language"]:checked').value
-        if (inputValue) {
-            // API functionality
-            const response = await sendMessage(selectedLanguage, inputValue)
-            renderNewPage(response.reply)
-        }
-    }
-    else if (submitBtn.value == "Start Over") {
-        renderPreviousPage()
-    }
-
+}
+flagsBtn.addEventListener('click', (e) => {
+    const clickedFlagContainer = e.target.closest(".flag-btn")
+    const clickedFlag = clickedFlagContainer.querySelector('.flag')
+    toggleFlags(clickedFlag)
 })
 
-function renderNewPage(translation) {
-    document.getElementById('translation-title').textContent = "Original text 👇"
-    selectLangTitle.textContent = "Your translation 👇"
-    selectLangTitle.style.paddingBottom = 0
-    innerFormSection.innerHTML = `<p id="output-txt" class="output-txt">${translation}</p>`
-    submitBtn.value = "Start Over"
+sendBtn.addEventListener('click', async () => {
+    const inputVal = inputTextField.value
+    const selectedLanguage = document.querySelector('input[name="language"]:checked').value
+    if (inputVal) {
+        let html = `
+            <p class="user-text">${inputVal}</p>
+        `
+        renderChat(html)
+        toggleLoading()
+        inputTextField.value = ""
+        const response = await sendMessage(selectedLanguage, inputVal)
+        html = `
+            <p class="system-text">${response.reply}</p>
+        `
+        renderChat(html)
+        toggleLoading()
+    }
+})
+
+function renderChat(htmlText) {
+    chatContainer.innerHTML += htmlText
 }
 
-function renderPreviousPage() {
-    document.getElementById('translation-title').textContent = "Text to translate 👇"
-    selectLangTitle.textContent = "Select language 👇"
-    inputTextField.value = ""
-    innerFormSection.innerHTML = `
-    <div>
-        <input type="radio" id="french" name="language" value="french" checked />
-        <label for="french">French </label>
-        <img src="assets/fr-flag.png" alt="Flag of France">
-    </div>
-    <div>
-        <input type="radio" id="spanish" name="language" value="spanish"/>
-        <label for="spanish">Spanish</label>
-        <img src="assets/sp-flag.png" alt="Flag of spain">
-    </div>
-    <div>
-        <input type="radio" id="japanese" name="language" value="japanese"/>
-        <label for="japanese">Japanese</label>
-        <img src="assets/jpn-flag.png" alt="Flag of Japan">
-    </div>
+sendBtn.addEventListener('dblclick', () => {
+    renderNewChat()
+})
+
+function renderNewChat() {
+    chatContainer.innerHTML = `
+        <p class="system-text">Select the language you me to translate into, type your text and hit send!</p>
     `
-    submitBtn.value = "Translate"
+}
+
+function toggleLoading() {
+    sendBtn.hidden = !(sendBtn.hidden)
+    loadingEl.hidden = !(loadingEl.hidden)
 }
