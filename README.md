@@ -4,7 +4,7 @@ This project is part of the Scrimba Full Stack Career Development Track. PollyGl
 
 ## Branches
 
-- **[main](https://github.com/Elikyals/translation-app/tree/main)** – Latest stable version
+- **[main](https://github.com/Elikyals/translation-app/tree/main)** – Latest stable version (same as stretch-goal)
 - **[core-req](https://github.com/Elikyals/translation-app/tree/core-req)** – Basic translation features
 - **[stretch-goal](https://github.com/Elikyals/translation-app/tree/stretch-goal)** – Enhanced features (this branch)
 
@@ -55,7 +55,7 @@ This project is part of the Scrimba Full Stack Career Development Track. PollyGl
 
 ## Demo
 
-![App Demo]() #TODO: Gif goes here
+![App Demo](https://github.com/Elikyals/translation-app/blob/stretch-goal/translation-app-sg.gif)
 
 ---
 
