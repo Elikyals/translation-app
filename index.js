@@ -24,6 +24,7 @@ async function sendMessage(language, userInput) {
         return 'Error: Could not get response';
     }
 }
+
 function toggleFlags(clickedOpt) {
     const frenchFlagEl = document.getElementById('french-flag') 
     const spanishFlagEl = document.getElementById('spanish-flag')
@@ -32,8 +33,8 @@ function toggleFlags(clickedOpt) {
     spanishFlagEl.classList.remove('clicked')
     japaneseFlagEl.classList.remove('clicked')
     clickedOpt.classList.add('clicked')
-
 }
+
 flagsBtn.addEventListener('click', (e) => {
     const clickedFlagContainer = e.target.closest(".flag-btn")
     const clickedFlag = clickedFlagContainer.querySelector('.flag')
