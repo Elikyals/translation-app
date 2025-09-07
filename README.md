@@ -38,13 +38,13 @@ This project is part of the Scrimba Full Stack Career Development Track. PollyGl
     ```sh
     npm install
     ```
-    
+
 3. Copy `.env.sample` to `.env` and add your API keys:
 
     ```sh
     DEEP_SEEK_API_KEY=your_api_key_here
     ```
-    
+
 4. Start the development server:
 
     ```sh
