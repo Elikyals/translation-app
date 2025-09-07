@@ -55,7 +55,7 @@ This project is part of the Scrimba Full Stack Career Development Track. PollyGl
 
 ## Demo
 
-![App Demo](https://github.com/Elikyals/translation-app/blob/stretch-goal/translation-app-sg.gif)
+![App Demo](https://github.com/Elikyals/translation-app/blob/stretch-goals/translation-app-sg.gif)
 
 ---
 
